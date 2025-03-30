@@ -1,0 +1,19 @@
+.form {
+    padding: 25px 20px;
+    border-radius: 5px;
+    box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+    background: white;
+    
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        padding-bottom: 25px;
+
+        .title {
+            font-size: 25px;
+            text-transform: uppercase;
+        }
+    }
+}

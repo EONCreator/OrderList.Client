@@ -1,0 +1,17 @@
+* {
+    color: #1a1f36;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+input[type=checkbox] {
+    font-size: 16px;
+    padding: 8px 16px;
+    margin-right: 7px;
+    outline-color: rgb(84 105 212 / 0.5);
+    background-color: rgb(255, 255, 255);
+}

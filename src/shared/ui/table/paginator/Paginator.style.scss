@@ -1,0 +1,45 @@
+.paginator {
+    display: flex;
+    align-items: end;
+    padding: 10px;
+
+    button {
+        margin: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 25px;
+        height: 25px;
+        padding: 15px;
+        border: 1px solid rgb(199, 199, 199);
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: rgb(245, 245, 245);
+        color: #585858;
+        font-weight: 600;
+        font-size: 14px;
+
+        img {
+            width: 15px;
+            height: 15px;
+        }
+
+        svg {
+            
+        }
+    }
+
+    button:hover {
+        background: rgb(226, 226, 226);
+    }
+
+    .active {
+        background: rgb(84, 105, 212);
+        border: 1px solid rgb(84, 105, 212);;
+        color: white;
+    }
+
+    .active:hover {
+        background: rgb(84, 105, 212);
+    }
+}
