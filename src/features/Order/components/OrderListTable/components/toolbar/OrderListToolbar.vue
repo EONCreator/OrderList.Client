@@ -21,11 +21,6 @@
 
     //#region Filters
 
-    const updateFilters = () => {
-        props.onFilterChange?.(props.filters!);
-        updateFilters();
-    };
-
     const firstNameFilterEnabled = ref<boolean>(true);
     const addressFilterEnabled = ref<boolean>(true);
     const productFilterEnabled = ref<boolean>(true);
@@ -45,11 +40,22 @@
     })
 
     watch([deliveryDateFilterEnabled], () => {
-        setFilterState({ column: 'deliveryDate', type: "Date", value: "" }, deliveryDateFilterEnabled.value)
+        const localDate = ref<string>('');
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
+        localDate.value = `${year}-${month}-${day}`;
+        setFilterState({ column: 'deliveryDate', type: "Date", value: localDate.value }, deliveryDateFilterEnabled.value)
     })
 
     watch([deliveryTimeFilterEnabled], () => {
-        setFilterState({ column: 'deliveryTime', type: "Date", value: "" }, deliveryTimeFilterEnabled.value)
+        const localTime = ref<string>('');
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        localTime.value = `${hours}:${minutes}`;
+        setFilterState({ column: 'deliveryTime', type: "Date", value: localTime.value }, deliveryTimeFilterEnabled.value)
     })
 
     //#endregion
@@ -61,7 +67,7 @@
 
     const setFilterState = (filter: Filter, enabled: boolean) => {
         if (enabled)
-            props.filters?.push({ column: filter.column, type: filter.type, value: "" })
+            props.filters?.push({ column: filter.column, type: filter.type, value: filter.value })
         else {
             const index = props.filters?.findIndex(f => f.column === filter.column);
             if (index !== -1) {

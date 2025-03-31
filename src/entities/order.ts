@@ -3,7 +3,7 @@ export interface Order {
     firstName: string;
     address: string;
     product?: string;
-    dateCreated: string;
+    dateCreated?: string;
     deliveryDate?: string;
     deliveryTime?: string;
     deliveryMethod?: string;

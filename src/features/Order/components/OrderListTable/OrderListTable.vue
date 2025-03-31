@@ -28,8 +28,7 @@
 
 <template>
     <OrderListToolbar 
-        :filters="filters"
-        @onFilterChange="fetchOrders" />
+        :filters="filters" />
     <Table 
         :columns="columns"
         :dataLoader="fetchOrders"

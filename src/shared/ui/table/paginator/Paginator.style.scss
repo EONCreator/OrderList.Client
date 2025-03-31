@@ -1,6 +1,6 @@
 .paginator {
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     padding: 10px;
 
     button {
@@ -23,23 +23,19 @@
             width: 15px;
             height: 15px;
         }
-
-        svg {
-            
+        
+        &:hover {
+            background: rgb(226, 226, 226);
         }
-    }
-
-    button:hover {
-        background: rgb(226, 226, 226);
     }
 
     .active {
         background: rgb(84, 105, 212);
-        border: 1px solid rgb(84, 105, 212);;
+        border: 1px solid rgb(84, 105, 212);
         color: white;
-    }
 
-    .active:hover {
-        background: rgb(84, 105, 212);
+        &:hover {
+            background: rgb(84, 105, 212);
+        }
     }
 }

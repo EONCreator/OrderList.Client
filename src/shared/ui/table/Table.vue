@@ -27,8 +27,10 @@
 	//#region Filters
 	
 	watch([props.filters], () => {
-		currentPage.value = 1
-		loadData(currentPage.value)
+		setTimeout(() => {
+			currentPage.value = 1
+			loadData(currentPage.value)
+		}, 100)
 	})
 
 	//#endregion
