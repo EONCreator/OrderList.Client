@@ -10,7 +10,6 @@ export interface TableColumn {
 
 export interface TableProps<T = any> {
     columns: TableColumn[];
-    data: T[];
     
     filters: Filter[],
     sortDefinition: SortDefinition;

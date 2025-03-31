@@ -15,6 +15,7 @@
 
     .data-grid {
         width: 100%;
+        min-height: 100%;
         border-collapse: collapse;
 
         th {
@@ -39,6 +40,10 @@
             &:hover {
                 background-color: rgb(226, 226, 226);
             }
+
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
         }
 
         .name {
@@ -96,5 +101,10 @@
         justify-content: end;
         padding: 0;
         border-top: 1px solid rgb(230, 228, 228);
+    }
+
+    .overlay {
+        padding: 100px 0;
+        background-color: rgba(252, 252, 252, 0.7);
     }
 }

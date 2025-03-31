@@ -5,10 +5,14 @@
 	import { SortDirection } from "@/shared/types/sortDefinition";
 	import Paginator from "./paginator/Paginator.vue";
 	import type { TableResponse } from "@/shared/types/tableResponse";
+	import Loading from "../loading/Loading.vue";
 
 	const emit = defineEmits();
 	const props = defineProps<TableProps<unknown>>();
 	const currentPage = ref<number>(1);
+	
+	const loading = ref<boolean>(true);
+	const parentContainer = ref<HTMLElement | null>(null);
 
 	//#region Data loading
 
@@ -20,6 +24,8 @@
 		} catch (error) {
 			console.error("Error loading data:", error);
 		}
+
+		loading.value = false
 	};
 
 	//#endregion
@@ -70,7 +76,7 @@
 <template>
     <div class="table">
         <div class="data">
-            <table class="data-grid">
+            <table class="data-grid" :ref="parentContainer">
 				<thead>
 					<tr>
 						<th v-for="column in columns" :key="column.key" @click="column.sortable ? sortByColumn(column.key) : null">
@@ -87,6 +93,13 @@
 					</tr>
 				</thead>
 				<tbody>
+					<tr>
+      					<td class="overlay" :colspan="props.columns.length">
+							<Loading 
+								title="Please, wait..."
+								:loading="loading" />
+						</td>
+    				</tr>
 					<tr v-for="item in tableResponse.items">
 						<td v-for="el in item">
 							<div class="success" v-if="el == true">&#x1F5F9;</div>
