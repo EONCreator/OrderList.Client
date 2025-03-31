@@ -93,8 +93,8 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-      					<td class="overlay" :colspan="props.columns.length">
+					<tr v-if="loading">
+      					<td class="overlay" :colspan="props.columns.length" >
 							<Loading 
 								title="Please, wait..."
 								:loading="loading" />
