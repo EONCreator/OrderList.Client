@@ -8,6 +8,7 @@ import BaseRadioButton from "./controls/BaseRadioButton/BaseRadioButton.vue";
 
 import ToolBar from "./forms/ToolBar/ToolBar.vue";
 import ToolBarItem from "./forms/ToolBar/ToolBarItem/ToolBarItem.vue";
+import ToolBarInlineGroup from "./forms/ToolBar/ToolbarInlineGroup/ToolBarInlineGroup.vue";
 
 import Form from "./forms/Form/Form.vue";
 import FormItem from "./forms/Form/FormItem/FormItem.vue";
@@ -30,6 +31,7 @@ export {
 
     ToolBar,
     ToolBarItem,
+    ToolBarInlineGroup,
 
     Table
 }

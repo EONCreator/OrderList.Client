@@ -3,5 +3,6 @@ export interface BaseComboboxProps {
     small: boolean,
     text: string,
     values: string[],
+    allValues: boolean,
     modelValue: string
 }

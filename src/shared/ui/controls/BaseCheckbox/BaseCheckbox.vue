@@ -5,7 +5,7 @@
 
     const props = withDefaults(defineProps<Partial<BaseCheckboxProps>>(), {
         disabled: false,
-        text: "Checkbox",
+        text: "",
         modelValue: false
     });
 
@@ -22,6 +22,7 @@
     <input
         type="checkbox"
         :disabled="disabled"
+        :checked="modelValue"
         @change="handleChange"
          />
     <label>{{ text }}</label>

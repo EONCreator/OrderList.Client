@@ -22,16 +22,23 @@
 
 ::-webkit-scrollbar {
     width: 8px;
-  }
+}
   
-  /* Track */
-  ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: rgb(216, 216, 216);
     border-radius: 10px;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+}
+::-webkit-scrollbar-thumb {
     background: rgb(180, 180, 180);
     border-radius: 10px;
-  }
+}
+
+input[type=text]:disabled, 
+input[type=text]:disabled::placeholder,
+
+input[type=date]:disabled,
+input[type=time]:disabled,
+select:disabled {
+    background-color: rgb(245, 245, 245);
+    color: rgb(145, 145, 145);
+}

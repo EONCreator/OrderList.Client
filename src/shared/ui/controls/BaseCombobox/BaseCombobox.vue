@@ -12,7 +12,9 @@
     const localValue = ref<string>('');
 
     onMounted(() => {
-        if (props.modelValue) {
+        if (props.allValues) {
+            localValue.value = '';
+        } else if (props.modelValue) {
             localValue.value = props.modelValue;
         } else if (props.values && props.values.length > 0) {
             localValue.value = props.values[0];
@@ -41,6 +43,7 @@
             :class="small ? 'small-input' : 'large-input'"
             :disabled="disabled"
             v-model="localValue">
+            <option v-if="allValues" :value="''">All</option>
             <option v-for="value in values" :key="value" :value="value">{{ value }}</option>
         </select>
     </div>

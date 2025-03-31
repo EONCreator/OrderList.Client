@@ -10,6 +10,11 @@ const pageNumbers = computed(() => {
     const pages = [];
     const totalPages = props.totalPages;
 
+    if (totalPages === 0) {
+        pages.push(0);
+        return pages;
+    }
+
     const startPage = Math.max(1, props.currentPage - 1);
     const endPage = Math.min(totalPages, props.currentPage + 1);
 
@@ -35,21 +40,21 @@ const pageNumbers = computed(() => {
 
 const goToPage = (page: number) => {
     if (page.toString() !== '...' && page !== props.currentPage) {
-        props.onPageChange(page)
+        props.onPageChange(page);
     }
 };
 
 const goToPreviousPage = () => {
     if (props.currentPage > 1) {
-        emit("update:currentPage", props.currentPage - 1); // Используем emit для обновления страницы
-        props.onPageChange(props.currentPage - 1)
+        emit("update:currentPage", props.currentPage - 1);
+        props.onPageChange(props.currentPage - 1);
     }
 };
 
 const goToNextPage = () => {
     if (props.currentPage < props.totalPages) {
-        emit("update:currentPage", props.currentPage + 1); // Используем emit для обновления страницы
-        props.onPageChange(props.currentPage + 1)
+        emit("update:currentPage", props.currentPage + 1);
+        props.onPageChange(props.currentPage + 1);
     }
 };
 </script>

@@ -10,13 +10,11 @@ export const useOrderList = () => {
     const filters = ref<Filter[]>([
         { column: 'firstName', type: "String", value: "" },
         { column: 'address', type: "String", value: "" },
-        { column: 'product', type: "String", value: "" },
-        { column: 'deliveryDate', type: "Date", value: "" },
-        { column: 'deliveryTime', type: "Date", value: "" },
+        { column: 'product', type: "String", value: "" }
     ]);
 
     const sortDefinition = ref<SortDefinition>({
-        column: 'deliveryDate',
+        column: 'dateCreated',
         type: SortDirection.Descending,
     });
 

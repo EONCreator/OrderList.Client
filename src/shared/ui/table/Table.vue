@@ -62,9 +62,7 @@
 
 	//#endregion
 
-	onMounted(() => {
-    	loadData(currentPage.value);
-	});
+	onMounted(() => loadData(currentPage.value))
 </script>
 
 <template>
